@@ -60,8 +60,8 @@
     - DOM3  
       - el.addEventListener('keyup',function(){},flase)  
 
-  DOM事件模型(捕获，目标阶段, 冒泡)  
-    ![DOMEVENTLOGO][dom_png]
+  - DOM事件模型(捕获，目标阶段, 冒泡)  
+    ![DOMEVENTLOGO][dom_png]  
     DOM事件流  
     DOM事件捕获的具体流程  
     Event对象的常见应用  
