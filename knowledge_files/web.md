@@ -44,8 +44,8 @@
 
     IFC(内联元素格式化上下文)  
 
-  - JS如何设置获取盒模型对应的宽和高
-    dom.style.width/height(内联样式的宽高/不能取到外联样式的宽高)
-    docm.currentStyle.width/height(获得渲染后的宽高,只有ie支持)
-    window.getComputedStyle(dom).width/height(获得渲染后的宽高)
-    dom.getBoundingClientRect().width/height(获取width/height --- 根据左顶点来获取位置)
+  - JS如何设置获取盒模型对应的宽和高  
+    dom.style.width/height(内联样式的宽高/不能取到外联样式的宽高)  
+    docm.currentStyle.width/height(获得渲染后的宽高,只有ie支持)  
+    window.getComputedStyle(dom).width/height(获得渲染后的宽高)  
+    dom.getBoundingClientRect().width/height(获取width/height --- 根据左顶点来获取位置)  
