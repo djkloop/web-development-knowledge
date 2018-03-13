@@ -49,3 +49,24 @@
     docm.currentStyle.width/height(获得渲染后的宽高,只有ie支持)  
     window.getComputedStyle(dom).width/height(获得渲染后的宽高)  
     dom.getBoundingClientRect().width/height(获取width/height --- 根据左顶点来获取位置)  
+
+# DOM事件类
+  - 基本概念：  
+  DOM事件的级别 
+    - DOM0  
+      - el.onclick=function(){}   
+    - DOM2
+      - el.addEventListener('click',function(),false)  
+    - DOM3  
+      - el.addEventListener('keyup',function(){},flase)  
+
+  DOM事件模型(捕获，目标阶段, 冒泡)  
+    ![DOMEVENTLOGO][dom_png]
+    DOM事件流  
+    DOM事件捕获的具体流程  
+    Event对象的常见应用  
+    自定义事件  
+
+
+<!--  -->
+[dom_png]: ../static/DOM.png "DOM图片6666"
