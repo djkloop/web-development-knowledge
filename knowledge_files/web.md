@@ -42,7 +42,6 @@
         5.display为inline-block、table-cell、table-caption
       - BFC使用场景  
 
-
     IFC(内联元素格式化上下文)  
 
   - JS如何设置获取盒模型对应的宽和高
