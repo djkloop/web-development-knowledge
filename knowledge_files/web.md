@@ -13,5 +13,40 @@
       - 多主体共存型（灵活型)  
 ````这种模式的存在是为了解决web主体型的不足,这种模式的一个最大特点是,原生开发和h5开发共存,也就是说,对于一些性能要求很高的页面模块,用原生来完成,对于一些通用型模块,用h5和js来完成,这种模式通用有跨平台特性,而且用户体验号,性能高,不逊色与原生,但是有一个很大的限制就是,采用这种模式需要一定的技术前提,也就是说这种模式不同于web主体型可以直接用第三方框架,这种模式一般是一些有技术支持的公司自己实现的,包括H5和原生的通信,原生API提供,容器的一些处理全部由原生人员来完成,所以说,使用这种技术的前提是得有专业的原生人员(包括Android,iOS)以及业务开发人员(原生开发负责功能,前端解决简单通用h5功能),当然了,如果技术上没有问题,用这种方案开发出来的App体验是很好的,而且性能也不逊色原生,所以是一种很优的方案````
   - 调试数据接口：mock数据测试
-  - 组件库建立：阅读过ui框架源码
+  - 组件库建立：阅读过ui框架源码
   - 系统优化与重构： 无。
+
+# 踩坑指南
+  - 熟悉框架
+
+
+# CSS盒模型
+
+  - 谈谈你对CSS盒模型的认识
+    基本概念：标准模型(margin+border+padding+content[content 部分不包含其他部分]) + IE模型(margin+border+padding+content[IE 盒子模型的 content 部分包含了border 和 padding])  
+    W3C模型宽：margin+border+padding+width;  
+    IE盒模型宽：margin+border+padding+width;  
+    box-sizing: content-box(标准模型);  
+    box-sizing: border-box(ie模型);  
+    BFC(解决边距重叠方案)(块级格式化上下文)  
+      - BFC原理  
+        1.BFC这个元素垂直方向边距发生重叠  
+        2.BFC页面上是一个独立的容器互不干扰
+        3.BFC里浮动元素会参与计算
+        4.BFC的区域不会与float box重叠
+      - 创建BFC  
+        1.overflow:hidden  
+        2.float属性不为none
+        3.overflow不为visible(可以是hidden、scroll、auto)  
+        4.position为absolute或fixed  
+        5.display为inline-block、table-cell、table-caption
+      - BFC使用场景  
+
+
+    IFC(内联元素格式化上下文)  
+
+  - JS如何设置获取盒模型对应的宽和高
+    dom.style.width/height(内联样式的宽高/不能取到外联样式的宽高)
+    docm.currentStyle.width/height(获得渲染后的宽高,只有ie支持)
+    window.getComputedStyle(dom).width/height(获得渲染后的宽高)
+    dom.getBoundingClientRect().width/height(获取width/height --- 根据左顶点来获取位置)
