@@ -33,7 +33,7 @@
         1.BFC这个元素垂直方向边距发生重叠  
         2.BFC页面上是一个独立的容器互不干扰
         3.BFC里浮动元素会参与计算
-        4.BFC的区域不会与float box重叠
+        4.BFC的区域不会与float元素重叠
       - 创建BFC  
         1.overflow:hidden  
         2.float属性不为none

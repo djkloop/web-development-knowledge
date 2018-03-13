@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
         }
     </style>
 </head>
+
 <body>
     <section id="set">
         <style>
@@ -27,5 +29,66 @@
         </style>
         <article class="child"></article>
     </section>
+    <!-- BFC垂直方向元素margin重叠 -->
+    <section id="margin">
+        <style>
+            #margin {
+                background: pink;
+            }
+
+            #margin>p {
+                margin: 5px auto 25px;
+                background: yellowgreen;
+            }
+        </style>
+        <p>1</p>
+        <div style="overflow:hidden;">
+            <p>2</p>
+        </div>
+        <p>3</p>
+    </section>
+
+    <!-- BFC不与float重叠 -->
+    <section id="layout">
+        <style>
+            #layout {
+                background: red;
+            }
+
+            #layout .left {
+                float: left;
+                width: 100px;
+                height: 100px;
+                background: greenyellow;
+            }
+
+            #layout .right {
+                height: 100px;
+                background: #ccc;
+                overflow: auto;
+            }
+        </style>
+        <div class="left"></div>
+        <div class="right"></div>
+    </section>
+
+    <!-- BFC子元素即使是float也会参与高度计算 -->
+    <section id="float">
+        <style>
+            #float {
+                background: red;
+                overflow: auto;
+            }
+
+            #float .float {
+                float: left;
+                font-size: 30px;
+            }
+        </style>
+        <div class="float">
+            我是浮动元素
+        </div>
+    </section>
 </body>
+
 </html>
