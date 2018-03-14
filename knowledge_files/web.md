@@ -71,7 +71,7 @@
         event.preventDefault() // 阻止默认事件
         event.stopPropagation() // 阻止冒泡行为
         event.stopImmediatePropagation() // element绑定双事件阻止后一个
-        event.currentTarget() // 当前所绑定的事件对象
+        event.currentTarget() // 当前所绑定的事件对象
         event.target 
     ``` 
     自定义事件  
@@ -199,6 +199,10 @@
     - HTTP协议采用"请求-应答"模式,当使用普通模式,即非Keep-Alive模式时,每个请求/应答客户和服务器都要新建一个连接，完成之后立即断开连接(HTTP协议为无状态协议)
     - 当使用Keep-Alive模式(又称持久连接,连接重用)时,Keep-Alive功能使客户端到服务器端的连接持续有效，当出现对服务器的后继请求时，Keep-Alive功能避免了建立或者重新建立连接
   - 什么是管线化
+    - 在使用持久连接的情况下,某个连接上消息的传递类似于
+      - ````请求1 -> 响应1 -> 请求2 -> 响应2 -> 请求3 -> 响应3````
+    - 某个连接上的消息变成了类似这样
+      - ````请求1 -> 请求2 -> 请求3 -> 响应1 -> 响应2 -> 响应3````
 
 <!--  -->
 [dom_png]: ../static/DOM.png "DOM图片6666"
