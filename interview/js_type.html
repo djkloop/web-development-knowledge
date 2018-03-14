@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Type</title>
+</head>
+<body>
+    <script>
+        // 数值
+        console.log(Number('34'));
+        // 字符串不能解析为数值则为NaN
+        console.log(Number('34NaN'));
+        // 空字符串 -> 0
+        console.log(Number(''));
+        // true -> 1 | false -> 0
+        console.log(Number(false));
+        // undefined -> NaN
+        console.log(Number(undefined));
+        // null -> 0
+        console.log(Number(null));
+        // 复合类型 -> valueOf再调用toString()
+        console.log('a', Number({a:1}));
+
+    </script>
+
+    <script>
+        // 
+        var b = {
+            b:1,
+            toString: function() {
+                console.log('我被调用了', ' toString')
+                return {
+                    b:2
+                }
+            },
+            valueOf: function() {
+                console.log('我也被调用了', ' valueOf');
+                return 'b'
+            }
+        }
+        console.log('b', String(b));
+    </script>
+
+    <script>
+        // undefined
+        console.log(Boolean(undefined));
+        // null
+        console.log(Boolean(null));
+        // -0
+        console.log(Boolean(-0));
+        // +0
+        console.log(Boolean(+0));
+        // NaN
+        console.log(Boolean(NaN));
+        // ''
+        console.log(Boolean(''));
+    </script>
+
+    <script>
+        console.log([]+[]);
+        console.log([]+{});
+        console.log({}+[])
+        console.log({} + {})
+        console.log(true+true)
+        console.log(1+{a:1})
+    </script>
+</body>
+</html>

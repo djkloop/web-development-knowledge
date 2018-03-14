@@ -89,6 +89,33 @@
             我是浮动元素
         </div>
     </section>
+
+    <div class="btn">按钮</div>
+    <style>
+        .btn {
+            width: 100px;
+            height: 20px;
+            background: greenyellow;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        var eventT = new CustomEvent("DIYEVENT", {
+            detail: {
+                hazcheeseburger: true,
+                nihao: 33
+            }
+        });
+
+        var ev = document.querySelector('.btn');
+        ev.addEventListener('DIYEVENT', function (e) {
+            console.log(e);
+        });
+        ev.addEventListener('click', function () {
+            ev.dispatchEvent(eventT);
+        });
+    </script>
 </body>
 
 </html>
