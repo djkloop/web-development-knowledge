@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>proto</title>
+</head>
+<body>
+    <script>
+        // 字面量
+        var o1 = {
+            name: 'o1'
+        }
+        var o2 = new Object({
+            name: 'o2'
+        })
+        // 构造函数
+        var M = function(nm) {
+            this.name = nm
+        }
+        var o3 = new M(33)
+        // Object.create
+        var p = {
+            name: 'p'
+        }
+        var o4 = Object.create(p);
+        var new2 = function (func) {
+            var o = Object.create(func.prototype);
+            var k = func.call(o);
+            if (typeof k === 'object') {
+                console.log('返回了k');
+                return k;
+            } else {
+                console.log('返回了o')
+                return o;
+            }
+        }
+    </script>
+</body>
+</html>
