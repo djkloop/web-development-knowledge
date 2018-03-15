@@ -276,7 +276,7 @@
 # 算法类
   - 排序
     - 冒泡排序
-      - ```javascript
+      ```javascript
         function bubbleSort(arr) {
           var len = arr.length;
           for (var i = 0; i < len; i++) {
@@ -292,7 +292,7 @@
         }
       ```
     - 选择排序
-      - ```javascript
+      ```javascript
         function selectionSort(arr) {
             var len = arr.length;
             var minIndex, temp;
@@ -311,7 +311,7 @@
         }
       ```
     - 插入排序
-      - ```javascript
+      ```javascript
         function insertionSort(arr) {
             var len = arr.length;
             var preIndex, current;
@@ -328,7 +328,7 @@
         }
        ```
     - 希尔排序
-      - ```javascript
+      ```javascript
         function shellSort(arr) {
             var len = arr.length,
                 temp,
@@ -347,6 +347,75 @@
             }
             return arr;
         }
+      ```
+    - 归并排序
+      ```javascript
+        function mergeSort(arr) {
+            var len = arr.length;
+            if(len < 2) {
+                return arr;
+            }
+            var middle = Math.floor(len / 2),
+                left = arr.slice(0, middle),
+                right = arr.slice(middle);
+            return merge(mergeSort(left), mergeSort(right));
+        }
+
+        function merge(left, right)
+        {
+            var result = [];
+
+            while (left.length>0 && right.length>0) {
+                if (left[0] <= right[0]) {
+                    result.push(left.shift());
+                } else {
+                    result.push(right.shift());
+                }
+            }
+
+            while (left.length)
+                result.push(left.shift());
+
+            while (right.length)
+                result.push(right.shift());
+
+            return result;
+        }
+      ```
+    - 快速排序
+      ```javascript
+        function quickSort(arr, left, right) {
+          var len = arr.length,
+              partitionIndex,
+              left = typeof left != 'number' ? 0 : left,
+              right = typeof right != 'number' ? len - 1 : right;
+
+          if (left < right) {
+              partitionIndex = partition(arr, left, right);
+              quickSort(arr, left, partitionIndex-1);
+              quickSort(arr, partitionIndex+1, right);
+          }
+          return arr;
+      }
+
+      function partition(arr, left ,right) {     
+          var pivot = left,  
+              index = pivot + 1;
+          for (var i = index; i <= right; i++) {
+              if (arr[i] < arr[pivot]) {
+                  swap(arr, i, index);
+                  index++;
+              }        
+          }
+          swap(arr, pivot, index - 1);
+          return index-1;
+      }
+
+      function swap(arr, i, j) {
+          var temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+      }
       ```
   - 堆栈、队列、链表
   - 递归
