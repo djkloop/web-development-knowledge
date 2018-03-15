@@ -421,6 +421,16 @@
   - 递归
   - 波兰式和逆波兰式
 
+# JS渲染机制
+  - DOCTYPE
+    - D-4
+      - 严格模式/非严格模式
+    - D-5
+  - JS渲染机制
+  ![JSLOGO][js_png] 
+
+
 
 <!--  -->
 [dom_png]: ../static/DOM.png "DOM图片6666"
+[js_png]: ../static/JS渲染机制.png "JS渲染机制"
